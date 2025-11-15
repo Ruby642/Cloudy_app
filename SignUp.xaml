@@ -1,0 +1,39 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Cloudy.SignUp"
+             Title="Sign Up">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="10">
+            <Label Text="SIGN UP" FontSize="28" HorizontalOptions="Center" />
+            <Label Text="Please fill in this form to sign up to Cloudy."
+                   FontSize="18" HorizontalOptions="Center" />
+            <Label Text="Or if you have an account already click here"
+                   FontSize="14" HorizontalOptions="Center" />
+            <Button Text="LOGIN" Clicked="OnGoToLoginClicked" />
+
+            <Label Text="Email" />
+            <Entry x:Name="EmailEntry" Placeholder="Enter your email" />
+
+            <Label Text="Username" />
+            <Entry x:Name="UsernameEntry" Placeholder="Create your Username" />
+
+            <Label Text="Password" />
+            <Entry x:Name="PasswordEntry" Placeholder="Enter your Password" IsPassword="True" />
+
+            <Label Text="Repeat Password" />
+            <Entry x:Name="RepeatPasswordEntry" Placeholder="Repeat Password" IsPassword="True" />
+
+            <CheckBox x:Name="RememberMeCheckBox" IsChecked="True" />
+            <Label Text="Remember me" />
+
+            <CheckBox x:Name="AgreeCheckBox" IsChecked="True" />
+            <Label Text="By creating an account you agree to our Terms and  Privacy" FontSize="12" />
+
+            <HorizontalStackLayout Spacing="10">
+                <Button Text="Sign Up" BackgroundColor="DodgerBlue" TextColor="White"
+                        Clicked="OnSignUpClicked" />
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
