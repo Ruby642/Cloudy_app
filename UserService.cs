@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Npgsql;
 using Cloudy_config;
 using BCrypt.Net;
-namespace Cloudy.Services
+namespace Cloudy
 {
     internal class UserService
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Microsoft.Maui.Controls;
-using Cloudy.Services;
+using Cloudy;
 namespace Cloudy
 {
 
@@ -24,7 +24,7 @@ namespace Cloudy
 
             if (password != repeat)
             {
-                await DisplayAlert("Error", "Passwords don't match", "OK");
+                await DisplayAlertAsync("Error", "Passwords don't match", "OK");
                 return;
             }
 
@@ -33,17 +33,17 @@ namespace Cloudy
                 bool ok = await _userService.RegisterUser(username, email, password);
                 if (ok)
                 {
-                    await DisplayAlert("Success", "Registered", "OK");
+                    await DisplayAlertAsync("Success", "Registered", "OK");
                     await Navigation.PushAsync(new LoginPage());
                 }
             }
             catch (InvalidOperationException ex)
             {
-                await DisplayAlert("Error", ex.Message, "OK");
+                await DisplayAlertAsync("Error", ex.Message, "OK");
             }
             catch (Exception ex)
             {
-                await DisplayAlert("Error", "Something went wrong: " + ex.Message, "OK");
+                await DisplayAlertAsync("Error", "Something went wrong: " + ex.Message, "OK");
             }
         }
         private async void OnGoToLoginClicked(object sender, EventArgs e)

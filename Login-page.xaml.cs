@@ -1,4 +1,4 @@
-﻿using Cloudy.Services;
+﻿using Cloudy;
 namespace Cloudy
 {
 
@@ -18,9 +18,9 @@ namespace Cloudy
 
             bool ok = await _userService.LoginUser(username, password);
             if (ok)
-                await DisplayAlert("Success", "Login successful", "OK");
+                await DisplayAlertAsync("Success", "Login successful", "OK");
             else
-                await DisplayAlert("Error", "Invalid username or password", "OK");
+                await DisplayAlertAsync("Error", "Invalid username or password", "OK");
         }
         private async void OnGoToSignUpClicked(object sender, EventArgs e)
         {
